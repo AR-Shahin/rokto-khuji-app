@@ -7,6 +7,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/utils/formatters.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/app_card.dart';
+import '../../core/widgets/blood_group_grid.dart';
 import '../../core/widgets/paged_list_view.dart';
 import '../../core/widgets/segmented_tabs.dart';
 import '../../models/area.dart';
@@ -102,25 +103,28 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
               ),
             ),
           ),
-          SizedBox(
-            height: 60,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              children: [
-                for (final g in groups)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: SelectChip(
-                      label: g.name,
-                      latin: true,
-                      selected: g.id == groupId,
-                      onTap: () => _pickGroup(g.id),
+          if (groups.isEmpty)
+            const Padding(padding: EdgeInsets.fromLTRB(16, 10, 16, 0), child: BloodGroupsUnavailable())
+          else
+            SizedBox(
+              height: 60,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                children: [
+                  for (final g in groups)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: SelectChip(
+                        label: g.name,
+                        latin: true,
+                        selected: g.id == groupId,
+                        onTap: () => _pickGroup(g.id),
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
-          ),
           if (_total != null && area != null && groupId != null)
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 4),

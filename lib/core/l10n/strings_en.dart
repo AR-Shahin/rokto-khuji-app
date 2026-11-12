@@ -8,6 +8,7 @@ const Map<String, String> stringsEn = {
   'credit.initiative': 'An initiative of',
   'credit.organization': 'Dreamfil Youth Welfare Organization',
 
+  'meta.groups_failed': 'Could not load blood groups',
   // Common
   'common.call': 'Call',
   'common.cancel': 'Cancel',

@@ -8,6 +8,7 @@ const Map<String, String> stringsBn = {
   'credit.initiative': 'উদ্যোগে',
   'credit.organization': 'ড্রিমফিল যুবসমাজ কল্যাণ সংগঠন',
 
+  'meta.groups_failed': 'রক্তের গ্রুপ লোড করা যায়নি',
   // Common
   'common.call': 'কল করুন',
   'common.cancel': 'বাতিল',

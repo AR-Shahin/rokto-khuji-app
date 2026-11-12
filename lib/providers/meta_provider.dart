@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import '../core/network/api_exception.dart';
 import '../models/blood_group.dart';
 import '../services/meta_service.dart';
 
@@ -11,21 +10,28 @@ class MetaProvider extends ChangeNotifier {
   final MetaService _service;
 
   List<BloodGroup> bloodGroups = const [];
-  bool _loading = false;
+  bool isLoading = false;
+
+  /// The last load failure (no internet, server down, wrong API address...).
+  Object? error;
 
   bool get isReady => bloodGroups.isNotEmpty;
 
   /// Safe to call many times: it only hits the API until the data is there.
   Future<void> load() async {
-    if (isReady || _loading) return;
-    _loading = true;
+    if (isReady || isLoading) return;
+    isLoading = true;
+    error = null;
+    notifyListeners();
+
     try {
       bloodGroups = await _service.bloodGroups();
-      notifyListeners();
-    } on ApiException {
-      // Stay empty. Screens call load() again when they open.
+    } catch (e) {
+      error = e;
+      debugPrint('MetaProvider: could not load blood groups: $e');
     } finally {
-      _loading = false;
+      isLoading = false;
+      notifyListeners();
     }
   }
 }
