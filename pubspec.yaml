@@ -4,21 +4,21 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.13.0
-  flutter: '>=3.47.0'
+  sdk: ^3.12.0
+  flutter: '>=3.44.0'
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  material_ui: ^1.11.0             # Material widgets (replaces package:flutter/material.dart)
+  material_ui: ^1.2.0              # Material widgets (replaces package:flutter/material.dart)
 
   dio: ^5.11.1                     # HTTP client
   provider: ^6.1.5                 # state management
   flutter_secure_storage: ^11.2.0  # keeps the login token safe
   shared_preferences: ^2.5.6       # remembers the language
-  google_fonts: ^9.0.0             # Anek Bangla, Hind Siliguri, Space Grotesk
+  google_fonts: ^6.2.1             # Anek Bangla, Hind Siliguri, Space Grotesk
   intl: any                        # dates (version is pinned by flutter_localizations)
   url_launcher: ^6.3.3             # call, WhatsApp, Telegram links
   image_picker: ^1.2.4             # profile photo

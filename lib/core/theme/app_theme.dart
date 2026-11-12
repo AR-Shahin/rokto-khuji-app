@@ -34,11 +34,29 @@ class AppTheme {
       error: AppColors.redDark,
     );
 
+    final fontTheme = GoogleFonts.hindSiliguriTextTheme();
+
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
       scaffoldBackgroundColor: AppColors.background,
-      textTheme: GoogleFonts.hindSiliguriTextTheme().apply(bodyColor: AppColors.text, displayColor: AppColors.text),
+      textTheme: TextTheme(
+        displayLarge: fontTheme.displayLarge,
+        displayMedium: fontTheme.displayMedium,
+        displaySmall: fontTheme.displaySmall,
+        headlineLarge: fontTheme.headlineLarge,
+        headlineMedium: fontTheme.headlineMedium,
+        headlineSmall: fontTheme.headlineSmall,
+        titleLarge: fontTheme.titleLarge,
+        titleMedium: fontTheme.titleMedium,
+        titleSmall: fontTheme.titleSmall,
+        bodyLarge: fontTheme.bodyLarge,
+        bodyMedium: fontTheme.bodyMedium,
+        bodySmall: fontTheme.bodySmall,
+        labelLarge: fontTheme.labelLarge,
+        labelMedium: fontTheme.labelMedium,
+        labelSmall: fontTheme.labelSmall,
+      ).apply(bodyColor: AppColors.text, displayColor: AppColors.text),
       dividerColor: AppColors.border,
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.card,
