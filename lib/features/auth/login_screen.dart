@@ -9,6 +9,7 @@ import '../../core/utils/ui_helpers.dart';
 import '../../core/utils/validators.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/app_text_field.dart';
+import '../../core/widgets/organization_credit.dart';
 import '../../providers/auth_provider.dart';
 import 'forgot_password_screen.dart';
 import 'register_screen.dart';
@@ -126,6 +127,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
+              const SizedBox(height: 28),
+              const OrganizationCredit(),
             ],
           ),
         ),

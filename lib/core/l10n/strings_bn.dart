@@ -4,6 +4,10 @@ const Map<String, String> stringsBn = {
   'app.name': 'রক্ত খুঁজি',
   'app.tagline': 'রক্ত খুঁজুন, জীবন বাঁচান',
 
+  // Credit
+  'credit.initiative': 'উদ্যোগে',
+  'credit.organization': 'ড্রিমফিল যুবসমাজ কল্যাণ সংগঠন',
+
   // Common
   'common.call': 'কল করুন',
   'common.cancel': 'বাতিল',
