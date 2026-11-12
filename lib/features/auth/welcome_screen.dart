@@ -6,6 +6,7 @@ import '../../core/l10n/app_strings.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/app_button.dart';
+import '../../core/widgets/organization_credit.dart';
 import '../../core/widgets/segmented_tabs.dart';
 import '../../providers/locale_provider.dart';
 import 'login_screen.dart';
@@ -74,6 +75,8 @@ class WelcomeScreen extends StatelessWidget {
               kind: AppButtonKind.outline,
               onPressed: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => const LoginScreen())),
             ),
+            const SizedBox(height: 28),
+            const OrganizationCredit(),
           ],
         ),
       ),

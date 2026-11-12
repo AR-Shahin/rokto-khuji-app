@@ -44,7 +44,9 @@ class _ShareStoryScreenState extends State<ShareStoryScreen> {
       final message = await context.read<ProfileService>().submitTestimonial(_content.text.trim());
       if (!mounted) return;
       showSuccess(context, message);
-      setState(() => _future = _load());
+      setState(() {
+        _future = _load();
+      });
     } on ApiException catch (e) {
       if (mounted) showError(context, e);
     } finally {
@@ -59,7 +61,9 @@ class _ShareStoryScreenState extends State<ShareStoryScreen> {
       appBar: AppBar(title: Text(tr('story.title'))),
       body: FutureView<Testimonial?>(
         future: _future,
-        onRetry: () => setState(() => _future = _load()),
+        onRetry: () => setState(() {
+          _future = _load();
+        }),
         builder: (context, story) => ListView(
           padding: const EdgeInsets.all(20),
           children: [

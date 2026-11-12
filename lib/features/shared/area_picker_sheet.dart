@@ -64,7 +64,11 @@ class _AreaPickerState extends State<_AreaPicker> {
     return service.areas(parentId: _path.isEmpty ? null : _path.last.id);
   }
 
-  void _reload() => setState(() => _areas = _load());
+  void _reload() {
+    setState(() {
+      _areas = _load();
+    });
+  }
 
   /// Wait until the user stops typing before calling the API.
   void _onSearchChanged(String _) {

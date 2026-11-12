@@ -47,7 +47,9 @@ class _DonorProfileScreenState extends State<DonorProfileScreen> {
       appBar: AppBar(title: Text(tr('donor.title'))),
       body: FutureView<DonorDetails>(
         future: _future,
-        onRetry: () => setState(() => _future = _load()),
+        onRetry: () => setState(() {
+          _future = _load();
+        }),
         builder: (context, details) {
           final d = details.donor;
           return Column(
